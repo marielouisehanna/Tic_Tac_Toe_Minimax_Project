@@ -40,14 +40,27 @@ def player_move(row, col):
             opponent_move()
 
 # Function to handle opponent's move
+# def opponent_move():
+#     if opponent_type.get() == "Random Opponent":
+#         winner = opponents.random_opponent_move(board, buttons)
+#         if winner:
+#             end_game(winner)
+#     else:
+#         # Placeholder for future opponent types
+#         result_label.config(text=f"{opponent_type.get()} not available!", fg='#f44336')
+
+# Function to handle opponent's move
 def opponent_move():
-    if opponent_type.get() == "Random Opponent":
+    opponent = opponent_type.get()
+    if opponent == "Random Opponent":
         winner = opponents.random_opponent_move(board, buttons)
-        if winner:
-            end_game(winner)
     else:
-        # Placeholder for future opponent types
-        result_label.config(text=f"{opponent_type.get()} not available!", fg='#f44336')
+        winner = opponents.minimax_opponent_move(board, buttons, opponent)
+    
+    if winner:
+        end_game(winner)
+
+
 
 # Function to end the game
 def end_game(winner):
@@ -73,12 +86,11 @@ def reset_game():
 control_frame = tk.Frame(window, bg='#121212')
 control_frame.place(relx=0.5, rely=0.8, anchor='center')
 
+
 def select_opponent(opponent):
     opponent_type.set(opponent)
-    if opponent == "Random Opponent":
-        result_label.config(text=f"{opponent} selected!", fg='#03DAC6')
-    else:
-        result_label.config(text=f"{opponent} not available!", fg='#f44336')
+    result_label.config(text=f"{opponent} selected!", fg='#03DAC6')
+
 
 button_style = {
     'font': ('Arial', 14), 'bg': '#2E2E2E', 'fg': 'white',
