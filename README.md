@@ -2,6 +2,7 @@
 # 4x4 Tic-Tac-Toe with Depth-Limited Minimax 🎮🧠
 
 This project implements a 4x4 Tic-Tac-Toe game with an AI player that uses a depth-limited version of the minimax algorithm. The AI has three difficulty levels: Easy, Medium, and Hard.
+We aslo added a random opponent.
 
 ## Features ✨
 - 🤖 AI opponent using the Minimax algorithm with alpha-beta pruning
@@ -10,14 +11,11 @@ This project implements a 4x4 Tic-Tac-Toe game with an AI player that uses a dep
 
 ## Installation 🛠️
 
-1. Clone the repository:
+Clone the repository:
    ```bash
    git clone git@github.com:marielouisehanna/Tic_Tac_Toe_Minimax_Project.git
    ```
-2. Install the dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+
 
 ## How to Play 🎮
 - Run the game with:
